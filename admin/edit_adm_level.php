@@ -18,6 +18,8 @@ err('Изменять должность себе - нельзя');
 }else{
 if(isset($_POST['edit'])){
 $lvl = abs(intval($_POST['lvl'])); 
+//TODO добавь проверку должности
+//Админ может назначить создателя, это же не правильно
 $con->query("UPDATE `user` SET `admin_level` =  '".$lvl."' WHERE `id` = '".$id."'");
 }
 if($user['admin_level']==3){
